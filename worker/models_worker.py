@@ -9,7 +9,10 @@ from .models.AudioDescription import AudioRecognition
 from .models.Caption import Caption
 # from api.s3 import s3
 import traceback
+import torch
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu") 
+print(device)
 caption_instance = Caption()
 transcribe_instance = AudioRecognition()
 
